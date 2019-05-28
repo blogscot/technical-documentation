@@ -1,0 +1,145 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 28px;
+  margin: 1rem 0 0.5rem;
+  padding: 1rem 0 0;
+}
+
+h2 {
+  font-size: 21px;
+  margin: 1.7rem 0 1.5rem;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+nav {
+  grid-column: 1 / span 3;
+  color: white;
+  background-color: hsl(232, 87%, 16%);
+  border: 1px solid hsla(0, 10, 90, 0.3);
+
+  header {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    span {
+      width: 90%;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+      color: black;
+      padding: 8px 4px;
+      font: 16px/1.4 Roboto, 'Source Serif Pro', serif;
+      letter-spacing: 0.6px;
+    }
+  }
+  p:first-of-type {
+    text-align: center;
+    transform: translateY(8px);
+  }
+  ul {
+    a {
+      list-style: none;
+      text-decoration: none;
+      color: inherit;
+      text-transform: capitalize;
+      padding: 10px;
+    }
+  }
+}
+
+// Main
+
+main {
+  grid-column: 4 / -1;
+  background-color: hsl(216, 80%, 100%);
+  border: 1px solid hsla(0, 10, 90, 0.3);
+  height: 100vh;
+  overflow: scroll;
+  padding: 0 1.6rem;
+
+  section {
+    // padding: 1rem 0 0;
+
+    header {
+      text-transform: capitalize;
+    }
+  }
+
+  p {
+    font-family: Merriweather, Book Antiqua, Georgia, Century Schoolbook, serif;
+    font-size: 1rem;
+    line-height: 1.6875em;
+  }
+}
+
+#Base {
+  margin-top: 1rem;
+}
+
+// Code
+
+code {
+  background-color: #f7f9fc;
+  border: 1px solid #d2ddee;
+  border-radius: 2px;
+  display: block;
+  overflow-x: auto;
+
+  pre {
+    font-family: Inconsolata, Menlo, Courier, monospace;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    font-size: 0.65rem;
+    padding: 0.5em 1em;
+    margin: 0;
+  }
+}
+
+.code {
+  font-family: Menlo, Courier, monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.9rem;
+  border: 1px solid #d2ddee;
+  background-color: #f7f9fc;
+}
+
+// Scrollbar
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: hsl(233, 21%, 40%);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(232, 80%, 63%);
+}
