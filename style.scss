@@ -28,12 +28,15 @@ h2 {
 
 body {
   font-family: 'Roboto', sans-serif;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  // display: grid;
+  // grid-template-columns: 280px repeat(9, 1fr);
 }
 
 nav {
-  grid-column: 1 / span 3;
+  float: left;
+  width: 280px;
+  height: 100%;
+  // grid-column: 1 / span 1;
   color: white;
   background-color: hsl(232, 87%, 16%);
 
@@ -120,18 +123,15 @@ $color1: white;
 
 .hideNavbar {
   overflow: hidden;
+  width: 3rem; // keep margin on main
   transform: translateX(-50vw);
-  transition: all 1s 0.6s ease-in-out;
-}
-
-.expandMain {
-  grid-column: 2 / -1 !important;
+  transition: all 0.2s ease-in-out;
 }
 
 // Main
 
 main {
-  grid-column: 4 / -1;
+  // grid-column: 3 / -1;
   background-color: hsl(216, 80%, 100%);
   border: 1px solid hsla(0, 10, 90, 0.3);
   height: 100vh;
@@ -210,5 +210,5 @@ code {
 
 // FCC Wrapper
 .hideWrapper {
-  visibility: hidden;
+  // visibility: hidden;
 }
