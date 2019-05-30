@@ -1,3 +1,7 @@
+@mixin debug($color) {
+  border: 1px solid $color;
+}
+
 *,
 ::after,
 ::before {
@@ -32,12 +36,13 @@ nav {
   grid-column: 1 / span 3;
   color: white;
   background-color: hsl(232, 87%, 16%);
-  border: 1px solid hsla(0, 10, 90, 0.3);
 
   header {
-    margin-top: 5rem;
+    margin-top: 4rem;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
     span {
       width: 90%;
       border: 1px solid black;
@@ -51,7 +56,6 @@ nav {
   }
   p:first-of-type {
     text-align: center;
-    transform: translateY(8px);
   }
   ul {
     a {
@@ -62,6 +66,66 @@ nav {
       padding: 10px;
     }
   }
+}
+
+// Label Toggle
+
+$color1: white;
+
+#label-toggle {
+  position: fixed;
+  top: 20px;
+  left: 230px;
+  justify-self: flex-end;
+  border-radius: 1.2px;
+  cursor: pointer;
+  display: block;
+  height: 22px;
+  width: 22px;
+
+  background: linear-gradient(
+    to bottom,
+    $color1 0%,
+    $color1 20%,
+    transparent 20%,
+    transparent 40%,
+    $color1 40%,
+    $color1 60%,
+    transparent 60%,
+    transparent 80%,
+    $color1 80%,
+    $color1 100%
+  ); // gradient hamburger
+}
+
+.toggleMenu {
+  $color1: black;
+  transform: translate3d(-214px, 0, 0) !important;
+  transition: all 0.2s ease-in-out;
+
+  background: linear-gradient(
+    to bottom,
+    $color1 0%,
+    $color1 20%,
+    transparent 20%,
+    transparent 40%,
+    $color1 40%,
+    $color1 60%,
+    transparent 60%,
+    transparent 80%,
+    $color1 80%,
+    $color1 100%
+  ) !important; // gradient hamburger
+}
+
+.hideNavbar {
+  overflow: hidden;
+  transform: translateX(-50vw);
+  transition: all 1s 0.6s ease-in-out;
+}
+
+.expandMain {
+  grid-column: 2 / -1 !important;
 }
 
 // Main
@@ -142,4 +206,9 @@ code {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(232, 80%, 63%);
+}
+
+// FCC Wrapper
+.hideWrapper {
+  visibility: hidden;
 }
