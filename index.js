@@ -11,11 +11,7 @@ window.onload = function() {
   let menuItemsCanHideSideBar = false
 
   labelToggle.addEventListener('click', function() {
-    if (menuOpen) {
-      closeNav()
-    } else {
-      openNav()
-    }
+    menuOpen = menuOpen ? closeNav() : openNav()
   })
 
   if (width < maxSmallDeviceWidth) {
@@ -26,10 +22,8 @@ window.onload = function() {
   window.onresize = function() {
     const width = window.innerWidth
     if (menuItemsCanHideSideBar && width > maxSmallDeviceWidth) {
-      // Force the navbar open
-      openNav()
-
       menuItemsCanHideSideBar = false
+      openNav()
       listItems.forEach(item => item.removeEventListener('click', closeNav))
     } else if (!menuItemsCanHideSideBar && width < maxSmallDeviceWidth) {
       menuItemsCanHideSideBar = true
@@ -41,13 +35,13 @@ window.onload = function() {
     labelToggle.classList.add('toggleMenu')
     navBar.classList.add('hideNavbar')
     fccTests.classList.add('hideFCCMenu')
-    menuOpen = false
+    return false
   }
 
   function openNav() {
     labelToggle.classList.remove('toggleMenu')
     navBar.classList.remove('hideNavbar')
     fccTests.classList.remove('hideFCCMenu')
-    menuOpen = true
+    return true
   }
 }
