@@ -2,7 +2,7 @@
   border: 1px solid $color;
 }
 
-$navWidth: 200px;
+$navWidth: 210px;
 
 *,
 ::after,
@@ -75,14 +75,19 @@ nav {
   }
 }
 
+@media screen and (min-height: 300px) {
+  nav {
+    overflow-y: scroll;
+  }
+}
+
 // Label Toggle
 
-$color1: white;
-
 #label-toggle {
+  $color1: white;
   position: fixed;
   top: 13px;
-  left: calc(#{$navWidth} - 36px);
+  left: calc(#{$navWidth} - 42px);
   justify-self: flex-end;
   border-radius: 1.2px;
   cursor: pointer;
