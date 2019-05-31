@@ -112,7 +112,7 @@ nav {
 
 .toggleMenu {
   $color1: black;
-  transform: translate3d(-120px, 0, 0) !important;
+  transform: translate3d(-154px, 0, 0) !important;
   transition: all 0.2s ease-in-out;
 
   background: linear-gradient(
@@ -132,11 +132,16 @@ nav {
 
 .hideNavbar {
   overflow: hidden;
-  width: 5rem; // keep margin on main
+  width: 4rem; // keep margin on main
   transform: translateX(-50vw);
   transition: all 0.2s ease-in-out;
 }
 
+@media screen and (max-width: 500px) {
+  .hideNavbar {
+    width: 2rem; // keep margin on main
+  }
+}
 // Main
 
 main {
@@ -216,4 +221,8 @@ code {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(232, 80%, 63%);
+}
+
+.hideFCCMenu {
+  visibility: hidden;
 }

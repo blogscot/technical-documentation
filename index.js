@@ -2,6 +2,7 @@ window.onload = function() {
   const labelToggle = document.querySelector('#label-toggle')
   const navBar = document.querySelector('nav#navbar')
   const listItems = [...document.querySelectorAll('nav ul>a')]
+  const fccTests = document.querySelector('#fcc_test_suite_wrapper')
 
   const maxSmallDeviceWidth = 500
   const width = window.innerWidth
@@ -11,37 +12,42 @@ window.onload = function() {
 
   labelToggle.addEventListener('click', function() {
     if (menuOpen) {
-      labelToggle.classList.add('toggleMenu')
-      navBar.classList.add('hideNavbar')
+      closeNav()
     } else {
-      labelToggle.classList.remove('toggleMenu')
-      navBar.classList.remove('hideNavbar')
+      openNav()
     }
-    menuOpen = !menuOpen
   })
 
   if (width < maxSmallDeviceWidth) {
     menuItemsCanHideSideBar = true
-    listItems.forEach(item => item.addEventListener('click', enable))
+    listItems.forEach(item => item.addEventListener('click', closeNav))
   }
 
   window.onresize = function() {
     const width = window.innerWidth
     if (menuItemsCanHideSideBar && width > maxSmallDeviceWidth) {
       // Force the navbar open
-      labelToggle.classList.remove('toggleMenu')
-      navBar.classList.remove('hideNavbar')
+      openNav()
 
       menuItemsCanHideSideBar = false
-      listItems.forEach(item => item.removeEventListener('click', enable))
+      listItems.forEach(item => item.removeEventListener('click', closeNav))
     } else if (!menuItemsCanHideSideBar && width < maxSmallDeviceWidth) {
       menuItemsCanHideSideBar = true
-      listItems.forEach(item => item.addEventListener('click', enable))
+      listItems.forEach(item => item.addEventListener('click', closeNav))
     }
   }
-  function enable() {
+
+  function closeNav() {
     labelToggle.classList.add('toggleMenu')
     navBar.classList.add('hideNavbar')
+    fccTests.classList.add('hideFCCMenu')
     menuOpen = false
+  }
+
+  function openNav() {
+    labelToggle.classList.remove('toggleMenu')
+    navBar.classList.remove('hideNavbar')
+    fccTests.classList.remove('hideFCCMenu')
+    menuOpen = true
   }
 }
