@@ -16,7 +16,11 @@ window.onload = function() {
 
   if (width < maxSmallDeviceWidth) {
     menuItemsCanHideSideBar = true
-    listItems.forEach(item => item.addEventListener('click', closeNav))
+    listItems.forEach(item =>
+      item.addEventListener('click', () => {
+        menuOpen = closeNav()
+      })
+    )
   }
 
   window.onresize = function() {
