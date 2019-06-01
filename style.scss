@@ -58,6 +58,7 @@ nav {
   }
   p:first-of-type {
     text-align: center;
+    font-size: 1.2rem;
   }
   ul {
     a {
@@ -66,6 +67,7 @@ nav {
       color: inherit;
       text-transform: capitalize;
       padding: 10px;
+      font-size: 1rem;
 
       li:hover {
         color: #41c7ca;
@@ -113,7 +115,6 @@ nav {
 .toggleMenu {
   $color1: black;
   transform: translate3d(-154px, 0, 0) !important;
-  transition: all 0.2s ease-in-out;
 
   background: linear-gradient(
     to bottom,
@@ -133,8 +134,7 @@ nav {
 .hideNavbar {
   overflow: hidden;
   width: 4rem; // keep margin on main
-  transform: translateX(-50vw);
-  transition: all 0.2s ease-in-out;
+  transform: translateX(-$navWidth);
 }
 
 @media screen and (max-width: 500px) {
@@ -142,6 +142,12 @@ nav {
     width: 2rem; // keep margin on main
   }
 }
+
+#navbar,
+.toggleMenu {
+  transition: all 0.2s ease-out;
+}
+
 // Main
 
 main {
