@@ -1,0 +1,203 @@
+*,
+::after,
+::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 28px;
+  margin: 1rem 0 0.5rem;
+  padding: 1rem 0 0;
+}
+
+h2 {
+  font-size: 21px;
+  margin: 1.7rem 0 1.5rem;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+nav {
+  float: left;
+  width: 210px;
+  height: 100%;
+  color: white;
+  background-color: #050f4c;
+}
+
+nav header {
+  margin-top: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 5rem;
+}
+
+nav header span {
+  width: 90%;
+  border: 1px solid black;
+  background: white;
+  text-align: center;
+  color: black;
+  padding: 8px 4px;
+  font: 16px/1.4 Roboto, 'Source Serif Pro', serif;
+  letter-spacing: 0.6px;
+}
+
+nav p:first-of-type {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+nav ul a {
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+  text-transform: capitalize;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+nav ul a li:hover {
+  color: #41c7ca;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+@media screen and (min-height: 300px) {
+  nav {
+    overflow-y: scroll;
+  }
+}
+
+#label-toggle {
+  position: fixed;
+  top: 13px;
+  left: calc(210px - 42px);
+  justify-self: flex-end;
+  border-radius: 1.2px;
+  cursor: pointer;
+  display: block;
+  height: 20px;
+  width: 24px;
+  background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(20%, white), color-stop(20%, transparent), color-stop(40%, transparent), color-stop(40%, white), color-stop(60%, white), color-stop(60%, transparent), color-stop(80%, transparent), color-stop(80%, white), to(white));
+  background: linear-gradient(to bottom, white 0%, white 20%, transparent 20%, transparent 40%, white 40%, white 60%, transparent 60%, transparent 80%, white 80%, white 100%);
+}
+
+.toggleMenu {
+  -webkit-transform: translate3d(-154px, 0, 0) !important;
+          transform: translate3d(-154px, 0, 0) !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(20%, black), color-stop(20%, transparent), color-stop(40%, transparent), color-stop(40%, black), color-stop(60%, black), color-stop(60%, transparent), color-stop(80%, transparent), color-stop(80%, black), to(black)) !important;
+  background: linear-gradient(to bottom, black 0%, black 20%, transparent 20%, transparent 40%, black 40%, black 60%, transparent 60%, transparent 80%, black 80%, black 100%) !important;
+}
+
+.hideNavbar {
+  overflow: hidden;
+  width: 4rem;
+  -webkit-transform: translateX(-210px);
+          transform: translateX(-210px);
+}
+
+@media screen and (max-width: 500px) {
+  .hideNavbar {
+    width: 2rem;
+  }
+}
+
+#navbar,
+.toggleMenu {
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+main {
+  background-color: white;
+  border: 1px solid rgba(232, 227, 227, 0.3);
+  height: 100vh;
+  overflow: scroll;
+  padding: 0 1.6rem;
+}
+
+main section header {
+  text-transform: capitalize;
+}
+
+main section:last-of-type {
+  margin-bottom: 100px;
+}
+
+main p {
+  font-family: Merriweather, Book Antiqua, Georgia, Century Schoolbook, serif;
+  font-size: 1rem;
+  line-height: 1.6875em;
+}
+
+#Base {
+  margin-top: 1rem;
+}
+
+code {
+  background-color: #f7f9fc;
+  border-radius: 2px;
+  display: block;
+  overflow-x: auto;
+}
+
+code pre {
+  font-family: Inconsolata, Menlo, Courier, monospace;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  font-size: 0.65rem;
+  padding: 0.5em 1em;
+  margin: 0;
+}
+
+.code {
+  font-family: Menlo, Courier, monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.9rem;
+  background-color: #f7f9fc;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #51567b;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #5569ec;
+}
+
+.hideFCCMenu {
+  visibility: hidden;
+}
