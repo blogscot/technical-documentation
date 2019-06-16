@@ -16,6 +16,7 @@
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
       async
     />
+    <link rel="stylesheet" href="prism.css" />
     <title>Technical Docs</title>
   </head>
   <body>
@@ -34,7 +35,7 @@
         <a href="#tuple" class="nav-link"><li>tuple</li></a>
       </ul>
     </nav>
-    <main id="main-doc">
+    <main id="main-doc" class="lang-elixir line-numbers">
       <section class="main-section" id="Base">
         <header>
           <h1>Base</h1>
@@ -48,20 +49,15 @@
           encoding schemes.
         </p>
         <h2>Base 16 alphabet</h2>
-        <code>
-          <pre>
-| Value | Encoding | Value | Encoding | Value | Encoding | Value | Encoding |
+        <pre><code>| Value | Encoding | Value | Encoding | Value | Encoding | Value | Encoding |
 |------:|---------:|------:|---------:|------:|---------:|------:|---------:|
 |      0|         0|      4|         4|      8|         8|     12|         C|
 |      1|         1|      5|         5|      9|         9|     13|         D|
 |      2|         2|      6|         6|     10|         A|     14|         E|
-|      3|         3|      7|         7|     11|         B|     15|         F|</pre
-          >
-        </code>
+|      3|         3|      7|         7|     11|         B|     15|         F|
+</code></pre>
         <h2>Base 32 alphabet</h2>
-        <code
-          ><pre>
-| Value | Encoding | Value | Encoding | Value | Encoding | Value | Encoding |
+        <pre><code>| Value | Encoding | Value | Encoding | Value | Encoding | Value | Encoding |
 |------:|---------:|------:|---------:|------:|---------:|------:|---------:|
 |      0|         A|      9|         J|     18|         S|     27|         3|
 |      1|         B|     10|         K|     19|         T|     28|         4|
@@ -71,13 +67,9 @@
 |      5|         F|     14|         O|     23|         X|       |          |
 |      6|         G|     15|         P|     24|         Y|  (pad)|         =|
 |      7|         H|     16|         Q|     25|         Z|       |          |
-|      8|         I|     17|         R|     26|         2|  </pre
-          ></code
-        >
+|      8|         I|     17|         R|     26|         2|  </code></pre>
         <h2>Base 64 alphabet</h2>
-        <code
-          ><pre>
-| Value | Encoding | Value | Encoding | Value | Encoding | Value | Encoding |
+        <pre><code>| Value | Encoding | Value | Encoding | Value | Encoding | Value | Encoding |
 |------:|---------:|------:|---------:|------:|---------:|------:|---------:|
 |      0|         A|     17|         R|     34|         i|     51|         z|
 |      1|         B|     18|         S|     35|         j|     52|         0|
@@ -95,9 +87,8 @@
 |     13|         N|     30|         e|     47|         v|       |          |
 |     14|         O|     31|         f|     48|         w|  (pad)|         =|
 |     15|         P|     32|         g|     49|         x|       |          |
-|     16|         Q|     33|         h|     50|         y|       |          |</pre
-          ></code
-        >
+|     16|         Q|     33|         h|     50|         y|       |          |
+        </code></pre>
       </section>
       <section class="main-section" id="Date">
         <header>
@@ -112,25 +103,17 @@
           or using the ~D (see <span class="code">Kernel.sigil_D/2</span>)
           sigil:
         </p>
-        <code>
-          <pre>
-iex> ~D[2000-01-01]
-~D[2000-01-01]</pre
-          >
-        </code>
+        <pre><code>iex> ~D[2000-01-01]
+~D[2000-01-01]</code></pre>
         <p>
           Both <span class="code">new/3</span> and sigil return a struct where
           the date fields can be accessed directly:
         </p>
-        <code
-          ><pre>
-iex> date = ~D[2000-01-01]
+        <pre><code>iex> date = ~D[2000-01-01]
 iex> date.year
 2000
 iex> date.month
-1</pre
-          ></code
-        >
+1</code></pre>
         <p>
           The functions on this module work with the Date struct as well as any
           struct that contains the same fields as the Date struct, such as
@@ -200,12 +183,8 @@ iex> date.month
         <p>
           Records are simply tuples where the first element is an atom:
         </p>
-        <code
-          ><pre>
-iex> Record.is_record({User, "john", 27})
-true</pre
-          ></code
-        >
+        <pre><code>iex> Record.is_record({User, "john", 27})
+true</code></pre>
         <p>
           This module provides conveniences for working with records at
           compilation time, where compile-time field names are used to
@@ -231,17 +210,13 @@ true</pre
           typespecs). This macro will expand to a tuple as seen in the example
           below:
         </p>
-        <code
-          ><pre>
-defmodule MyModule do
+        <pre><code>defmodule MyModule do
   require Record
   Record.defrecord(:user, name: "john", age: 25)
 
   @type user :: record(:user, name: String.t(), age: integer)
   # expands to: "@type user :: {:user, String.t(), integer}"
-end</pre
-          ></code
-        >
+end</code></pre>
       </section>
       <section class="main-section" id="tuple">
         <header>
@@ -271,14 +246,10 @@ end</pre
           functions do not work on tuples.
         </p>
         <p>Tuples are denoted with curly braces:</p>
-        <code
-          ><pre>
-iex> {}
+        <pre><code>iex> {}
 {}
 iex> {1, :two, "three"}
-{1, :two, "three"}</pre
-          ></code
-        >
+{1, :two, "three"}</code></pre>
         <p>
           A tuple may contain elements of different types, which are stored
           contiguously in memory. Accessing any element takes constant time, but
@@ -298,22 +269,19 @@ iex> {1, :two, "three"}
           used as collections. To append to a tuple, it is preferable to use
           pattern matching:
         </p>
-        <code>
-          <pre>
-tuple = {:ok, :example}
+        <pre><code>tuple = {:ok, :example}
 
 # Avoid
 Tuple.insert_at(tuple, 2, %{})
 
 # Prefer
 {:ok, atom} = tuple
-{:ok, atom, %{}}</pre
-          >
-        </code>
+{:ok, atom, %{}}</code></pre>
       </section>
     </main>
 
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script src="prism.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
