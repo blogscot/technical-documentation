@@ -37,7 +37,7 @@ nav {
   width: $navWidth;
   height: 100%;
   color: white;
-  background-color: hsl(232, 87%, 16%);
+  background-color: #510b51;
 
   header {
     display: flex;
@@ -160,9 +160,15 @@ main {
   border: 1px solid hsla(0, 10, 90, 0.3);
   height: 100vh;
   overflow: scroll;
-  padding: 0 1.6rem;
+  padding-right: 1.6rem;
 
   section {
+    padding-left: 1rem;
+    header::first-line {
+      color: purple;
+      font-size: xx-large;
+      font-variant: small-caps;
+    }
     header {
       text-transform: capitalize;
     }
