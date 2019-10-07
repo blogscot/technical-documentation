@@ -46,7 +46,7 @@ nav header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 5rem;
+  margin-top: 6rem;
 }
 
 nav header span {
@@ -56,12 +56,12 @@ nav header span {
   text-align: center;
   color: black;
   padding: 8px 4px;
-  font: 16px/1.4 Roboto, 'Source Serif Pro', serif;
+  font: 18px/1.4 Roboto, 'Source Serif Pro', serif;
   letter-spacing: 0.6px;
 }
 
 nav section {
-  margin-left: 2rem;
+  margin-left: 2.5rem;
   font-size: 1.2rem;
 }
 
@@ -71,8 +71,8 @@ nav section p {
 }
 
 nav ul {
-  -webkit-padding-start: 1rem;
-          padding-inline-start: 1rem;
+  -webkit-padding-start: 1.25rem;
+          padding-inline-start: 1.25rem;
   margin-top: 0;
 }
 

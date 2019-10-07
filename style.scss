@@ -43,7 +43,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 5rem;
+    margin-top: 6rem;
     span {
       width: 90%;
       border: 1px solid black;
@@ -51,12 +51,12 @@ nav {
       text-align: center;
       color: black;
       padding: 8px 4px;
-      font: 16px/1.4 Roboto, 'Source Serif Pro', serif;
+      font: 18px/1.4 Roboto, 'Source Serif Pro', serif;
       letter-spacing: 0.6px;
     }
   }
   section {
-    margin-left: 2rem;
+    margin-left: 2.5rem;
     font-size: 1.2rem;
     p {
       margin-top: 2.75rem;
@@ -64,7 +64,7 @@ nav {
     }
   }
   ul {
-    padding-inline-start: 1rem;
+    padding-inline-start: 1.25rem;
     margin-top: 0;
     a {
       list-style: none;
